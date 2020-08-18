@@ -4,7 +4,7 @@ function ListItemText() {
   return (
     <div>
       <h3>TITLE</h3>
-      <span>Description</span>
+      <span>Datum</span>
     </div>
   );
 }
