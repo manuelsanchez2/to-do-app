@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import List from "./components/List";
 import ListItem from "./components/ListItem";
+import ListItemIcon from "./components/ListItemIcon";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       </header>
       <main className="app__main">
         <List>
-          <ListItem>Test</ListItem>
+          <ListItem>
+            <ListItemIcon />
+          </ListItem>
           <ListItem>Test</ListItem>
           <ListItem>Test</ListItem>
         </List>
