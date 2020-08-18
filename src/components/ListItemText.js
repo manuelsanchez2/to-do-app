@@ -1,10 +1,10 @@
 import React from "react";
 
-function ListItemText() {
+function ListItemText({ title, date }) {
   return (
     <div>
-      <h3>TITLE</h3>
-      <span>Description</span>
+      <h3>{title}</h3>
+      <span>{date}</span>
     </div>
   );
 }
