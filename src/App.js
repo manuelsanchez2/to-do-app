@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import List from "./components/List";
+import ListItem from "./components/ListItem";
 
 function App() {
   return (
@@ -9,7 +10,11 @@ function App() {
         <h2>TO DO LIST</h2>
       </header>
       <main className="app__main">
-        <List>Liste</List>
+        <List>
+          <ListItem>Test</ListItem>
+          <ListItem>Test</ListItem>
+          <ListItem>Test</ListItem>
+        </List>
       </main>
       <footer className="app__footer">Footer</footer>
     </div>
