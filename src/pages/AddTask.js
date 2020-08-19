@@ -10,6 +10,8 @@ function AddTask() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -22,16 +24,25 @@ function AddTask() {
     setDate(event.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    createTask({
+
+    setLoading(true);
+    const todo = {
       title,
       author,
       date,
       createdAt: Date.now(),
-    });
+    };
+    try {
+      await createTask(todo);
+    } catch (error) {
+      console.error(error);
+    }
+
     setTitle("");
     setAuthor("");
+    setLoading(false);
   }
 
   console.log(title, author, date);
@@ -75,7 +86,7 @@ function AddTask() {
             className="main__button__add"
             type="submit"
             value="Add task"
-            disabled={!title || !author}
+            disabled={!title || !author || loading}
           />
         </form>
 
