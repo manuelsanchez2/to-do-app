@@ -5,7 +5,8 @@ import ListItem from "./components/ListItem";
 import ListItemIcon from "./components/ListItemIcon";
 import ListItemText from "./components/ListItemText";
 import ListItemCheckbox from "./components/ListItemCheckbox";
-import { getTodos } from "./api/todos";
+import { getTodos, createTask } from "./api/todos";
+import ButtonPlus from "./components/ButtonPlus";
 
 function App() {
   const [todos, setTodos] = useState(null);
@@ -18,6 +19,12 @@ function App() {
     };
     doFetch();
   }, []);
+
+  // const Handleclick = () => {
+  //   console.log("hola");
+  //   console.alert("hola");
+  //   // createTask();
+  // };
 
   return (
     <div className="app">
@@ -35,7 +42,9 @@ function App() {
           ))}
         </List>
       </main>
-      <footer className="app__footer">Footer</footer>
+      <footer className="app__footer">
+        <ButtonPlus />
+      </footer>
     </div>
   );
 }
