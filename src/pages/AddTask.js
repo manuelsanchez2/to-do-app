@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ButtonPlus from "../components/ButtonPlus";
 import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
+import { createTask } from "../api/todos";
 
 function AddTask() {
   const [title, setTitle] = useState("");
@@ -23,7 +24,14 @@ function AddTask() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert("Submitted" + " " + title + " " + author);
+    createTask({
+      title,
+      author,
+      date,
+      createdAt: Date.now(),
+    });
+    setTitle("");
+    setAuthor("");
   }
 
   console.log(title, author, date);
@@ -62,7 +70,7 @@ function AddTask() {
               onChange={handleDateChange}
             />
           </label>
-          <input type="submit" value="add task" />
+          <input type="submit" value="Add task" />
         </form>
         <Link to="/home">BACK TO HOME</Link>
       </main>

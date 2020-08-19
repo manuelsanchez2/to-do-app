@@ -9,13 +9,13 @@ export const getTodos = async () => {
   return result;
 };
 
-export const createTask = async () => {
+export const createTask = async (todo) => {
   const response = await fetch("http://localhost:3333/todos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ title: "HOLA", date: "Ahora" }),
+    body: JSON.stringify(todo),
   });
 
   if (!response.ok) {

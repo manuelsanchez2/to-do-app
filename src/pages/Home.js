@@ -33,7 +33,11 @@ function Home() {
           {todos?.map((todo) => (
             <ListItem key={todo.id}>
               <ListItemIcon />
-              <ListItemText title={todo.title} date={todo.date} />
+              <ListItemText
+                title={todo.title}
+                author={todo.author}
+                date={todo.date}
+              />
               <ListItemCheckbox />
             </ListItem>
           ))}
