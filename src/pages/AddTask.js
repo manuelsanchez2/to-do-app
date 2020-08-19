@@ -6,12 +6,27 @@ import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
 
 function AddTask() {
-  const [title, setTitle] = useState(null);
-  const [date, setDate] = useState(null);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [date, setDate] = useState("");
 
-  function handleChange() {
-    console.log("New task added");
+  function handleTitleChange(event) {
+    setTitle(event.target.value);
   }
+  function handleAuthorChange(event) {
+    setAuthor(event.target.value);
+  }
+
+  function handleDateChange(event) {
+    setDate(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Submitted" + " " + title + " " + author);
+  }
+
+  console.log(title, author, date);
 
   return (
     <>
@@ -19,16 +34,35 @@ function AddTask() {
         <h2>ADD NEW TASK</h2>
       </header>
       <main className="app__main">
-        <form>
-          <label>
+        <form onSubmit={handleSubmit}>
+          <label className="app__main__input">
             Title:
-            <input type="text" name="title" />
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleTitleChange}
+            />
           </label>
-          <label>
+          <label className="app__main__input">
+            Author:
+            <input
+              type="text"
+              name="author"
+              value={author}
+              onChange={handleAuthorChange}
+            />
+          </label>
+          <label className="app__main__input">
             Date:
-            <input type="date" name="date" />
+            <input
+              type="date"
+              name="date"
+              value={date}
+              onChange={handleDateChange}
+            />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="add task" />
         </form>
         <Link to="/home">BACK TO HOME</Link>
       </main>
