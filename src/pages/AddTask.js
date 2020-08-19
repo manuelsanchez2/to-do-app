@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 function AddTask() {
   return (
@@ -15,6 +16,7 @@ function AddTask() {
           </label>
           <input type="submit" value="Submit" />
         </form>
+        <Link to="/home">BACK TO HOME</Link>
       </main>
     </div>
   );

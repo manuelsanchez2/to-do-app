@@ -6,6 +6,7 @@ import ListItemIcon from "../components/ListItemIcon";
 import ListItemText from "../components/ListItemText";
 import ListItemCheckbox from "../components/ListItemCheckbox";
 import { getTodos } from "../api/todos";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [todos, setTodos] = useState(null);
@@ -34,6 +35,7 @@ function Home() {
             </ListItem>
           ))}
         </List>
+        <Link to="/add">ADD NEW TASK</Link>
       </main>
     </>
   );
