@@ -71,7 +71,12 @@ function AddTask() {
               onChange={handleDateChange}
             />
           </label>
-          <input className="main__button__add" type="submit" value="Add task" />
+          <input
+            className="main__button__add"
+            type="submit"
+            value="Add task"
+            disabled={!title || !author}
+          />
         </form>
 
         <Link to="/home">BACK TO HOME</Link>
