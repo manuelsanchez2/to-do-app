@@ -28,6 +28,7 @@ function AddTask() {
     event.preventDefault();
 
     setLoading(true);
+    setError(false);
     const todo = {
       title,
       author,
@@ -36,13 +37,13 @@ function AddTask() {
     };
     try {
       await createTask(todo);
+      setTitle("");
+      setAuthor("");
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
-
-    setTitle("");
-    setAuthor("");
-    setLoading(false);
   }
 
   console.log(title, author, date);
@@ -88,6 +89,7 @@ function AddTask() {
             value="Add task"
             disabled={!title || !author || loading}
           />
+          {error && <p>Something bad happend. Try again later</p>}
         </form>
 
         <Link to="/home">BACK TO HOME</Link>
