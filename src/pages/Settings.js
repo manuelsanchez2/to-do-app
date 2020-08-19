@@ -5,6 +5,7 @@ import ButtonPlus from "../components/ButtonPlus";
 import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
 import { useHistory } from "react-router-dom";
+import backSrc from "../assets/back.svg";
 
 function Settings(props) {
   const history = useHistory();
@@ -15,8 +16,8 @@ function Settings(props) {
         <h2>SETTINGS</h2>
       </header>
       <main className="app__main">
-        <button onClick={() => history.goBack()}>
-          BACK TO CREATE NEW TASK
+        <button className="app__back_button" onClick={() => history.goBack()}>
+          <img src={backSrc} alt="back" />
         </button>
         <ul>
           <li>OPCION 1</li>

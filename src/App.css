@@ -40,6 +40,12 @@
   padding-bottom: 3px;
 }
 
+.app__back_button {
+  background: none;
+  border: none;
+  padding: 15px 0 0 10px;
+}
+
 .main__button__add {
   margin: 0 auto;
 }
