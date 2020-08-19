@@ -55,6 +55,9 @@ function App() {
               </List>
             </main>
           </Route>
+          <Route path="/new">
+            <h2>Hola, soy New Task</h2>
+          </Route>
           <Route path="/settings">
             <h2>Hola, soy Settings</h2>
           </Route>
@@ -63,7 +66,9 @@ function App() {
           <Link to="/main">
             <img src={listSrc} alt="main" />
           </Link>
-          <ButtonPlus />
+          <Link to="/new">
+            <ButtonPlus />
+          </Link>
           <Link to="/settings">
             <img src={settingsSrc} alt="settings" />
           </Link>
