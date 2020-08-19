@@ -41,6 +41,7 @@ function AddTask() {
       setAuthor("");
     } catch (error) {
       console.error(error);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -89,7 +90,12 @@ function AddTask() {
             value="Add task"
             disabled={!title || !author || loading}
           />
-          {error && <p>Something bad happend. Try again later</p>}
+          {error && (
+            <p>
+              Something really really bad happened. (You forgot again to open
+              the API port, Manu). Try again later
+            </p>
+          )}
         </form>
 
         <Link to="/home">BACK TO HOME</Link>
