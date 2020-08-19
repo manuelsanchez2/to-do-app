@@ -19,11 +19,6 @@ function Home() {
     doFetch();
   }, []);
 
-  // const Handleclick = () => {
-  //   console.log("hola");
-  //   console.alert("hola");
-  //   // createTask();
-  // };
   return (
     <>
       <header className="app__header">

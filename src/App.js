@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
-// import AddTask from "./pages/AddTask";
+import AddTask from "./pages/AddTask";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 import ButtonPlus from "./components/ButtonPlus";
@@ -17,8 +17,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/add">
-            <h2>Hola, soy New Task</h2>
-            <input />
+            <AddTask />
           </Route>
           <Route path="/settings">
             <h2>Hola, soy Settings</h2>
