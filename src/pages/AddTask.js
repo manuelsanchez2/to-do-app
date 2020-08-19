@@ -42,9 +42,9 @@ function AddTask() {
         <h2>ADD NEW TASK</h2>
       </header>
       <main className="app__main">
-        <form onSubmit={handleSubmit}>
-          <label className="app__main__input">
-            Title:
+        <form className="app__form" onSubmit={handleSubmit}>
+          <label className="app__form__input">
+            <span className="app__form__text">Title:</span>
             <input
               type="text"
               name="title"
@@ -52,17 +52,18 @@ function AddTask() {
               onChange={handleTitleChange}
             />
           </label>
-          <label className="app__main__input">
-            Author:
+          <label className="app__form__input">
+            <span className="app__form__text">Author:</span>
             <input
               type="text"
               name="author"
               value={author}
               onChange={handleAuthorChange}
+              placeholder="Who is going to do what?"
             />
           </label>
-          <label className="app__main__input">
-            Date:
+          <label className="app__form__input">
+            <span className="app__form__text">Date:</span>
             <input
               type="date"
               name="date"
@@ -70,8 +71,9 @@ function AddTask() {
               onChange={handleDateChange}
             />
           </label>
-          <input type="submit" value="Add task" />
+          <input className="main__button__add" type="submit" value="Add task" />
         </form>
+
         <Link to="/home">BACK TO HOME</Link>
       </main>
       <footer className="app__footer">
