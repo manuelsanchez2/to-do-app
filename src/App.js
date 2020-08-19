@@ -14,6 +14,8 @@ import ListItemText from "./components/ListItemText";
 import ListItemCheckbox from "./components/ListItemCheckbox";
 import { getTodos, createTask } from "./api/todos";
 import ButtonPlus from "./components/ButtonPlus";
+import listSrc from "./assets/list.svg";
+import settingsSrc from "./assets/settings.svg";
 
 function App() {
   const [todos, setTodos] = useState(null);
@@ -58,9 +60,13 @@ function App() {
           </Route>
         </Switch>
         <footer className="app__footer">
-          <Link to="/main">Home</Link>
+          <Link to="/main">
+            <img src={listSrc} alt="main" />
+          </Link>
           <ButtonPlus />
-          <Link to="/settings">Settings</Link>
+          <Link to="/settings">
+            <img src={settingsSrc} alt="settings" />
+          </Link>
         </footer>
       </div>
     </Router>
