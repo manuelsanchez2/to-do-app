@@ -10,6 +10,8 @@ function AddTask() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -22,16 +24,27 @@ function AddTask() {
     setDate(event.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    createTask({
+
+    setLoading(true);
+    setError(false);
+    const todo = {
       title,
       author,
       date,
       createdAt: Date.now(),
-    });
-    setTitle("");
-    setAuthor("");
+    };
+    try {
+      await createTask(todo);
+      setTitle("");
+      setAuthor("");
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   console.log(title, author, date);
@@ -71,7 +84,13 @@ function AddTask() {
               onChange={handleDateChange}
             />
           </label>
-          <input className="main__button__add" type="submit" value="Add task" />
+          <input
+            className="main__button__add"
+            type="submit"
+            value="Add task"
+            disabled={!title || !author || loading}
+          />
+          {error && <p>Something bad happened. Try again later :)</p>}
         </form>
 
         <Link to="/home">BACK TO HOME</Link>
