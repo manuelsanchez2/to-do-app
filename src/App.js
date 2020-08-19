@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import List from "./components/List";
 import ListItem from "./components/ListItem";
 import ListItemIcon from "./components/ListItemIcon";
@@ -7,6 +14,8 @@ import ListItemText from "./components/ListItemText";
 import ListItemCheckbox from "./components/ListItemCheckbox";
 import { getTodos, createTask } from "./api/todos";
 import ButtonPlus from "./components/ButtonPlus";
+import listSrc from "./assets/list.svg";
+import settingsSrc from "./assets/settings.svg";
 
 function App() {
   const [todos, setTodos] = useState(null);
@@ -27,25 +36,45 @@ function App() {
   // };
 
   return (
-    <div className="app">
-      <header className="app__header">
-        <h2>TO DO LIST</h2>
-      </header>
-      <main className="app__main">
-        <List>
-          {todos?.map((todo) => (
-            <ListItem key={todo.id}>
-              <ListItemIcon />
-              <ListItemText title={todo.title} date={todo.date} />
-              <ListItemCheckbox />
-            </ListItem>
-          ))}
-        </List>
-      </main>
-      <footer className="app__footer">
-        <ButtonPlus />
-      </footer>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/main">
+            <header className="app__header">
+              <h2>TO DO LIST</h2>
+            </header>
+            <main className="app__main">
+              <List>
+                {todos?.map((todo) => (
+                  <ListItem key={todo.id}>
+                    <ListItemIcon />
+                    <ListItemText title={todo.title} date={todo.date} />
+                    <ListItemCheckbox />
+                  </ListItem>
+                ))}
+              </List>
+            </main>
+          </Route>
+          <Route path="/new">
+            <h2>Hola, soy New Task</h2>
+          </Route>
+          <Route path="/settings">
+            <h2>Hola, soy Settings</h2>
+          </Route>
+        </Switch>
+        <footer className="app__footer">
+          <Link to="/main">
+            <img src={listSrc} alt="main" />
+          </Link>
+          <Link to="/new">
+            <ButtonPlus />
+          </Link>
+          <Link to="/settings">
+            <img src={settingsSrc} alt="settings" />
+          </Link>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
