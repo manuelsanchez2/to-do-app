@@ -57,6 +57,7 @@ function App() {
           </Route>
           <Route path="/new">
             <h2>Hola, soy New Task</h2>
+            <input />
           </Route>
           <Route path="/settings">
             <h2>Hola, soy Settings</h2>
