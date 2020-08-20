@@ -21,6 +21,7 @@ function Home() {
         <h2>TO DO LIST</h2>
       </header>
       <main className="app__main">
+        <button>REFRESH ME</button>
         {error && <div>FATAL ERROR...</div>}
         {loading && <div>Page is loading...</div>}
         <List>
