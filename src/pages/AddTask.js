@@ -5,6 +5,7 @@ import { createTask } from "../api/todos";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
 import PageContainer from "../components/PageContainer";
+import StyledMainAddTask from "../components/StyledMainAdd";
 
 function AddTask() {
   const [title, setTitle] = useState("");
@@ -54,7 +55,7 @@ function AddTask() {
       <StyledHeader>
         <h2>ADD NEW TASK</h2>
       </StyledHeader>
-      <main className="app__main">
+      <StyledMainAddTask>
         <form className="app__form" onSubmit={handleSubmit}>
           <label className="app__form__input">
             <span className="app__form__text">Title:</span>
@@ -92,7 +93,7 @@ function AddTask() {
           />
           {error && <p>Something bad happened. Try again later!</p>}
         </form>
-      </main>
+      </StyledMainAddTask>
       <StyledFooter />
     </PageContainer>
   );
