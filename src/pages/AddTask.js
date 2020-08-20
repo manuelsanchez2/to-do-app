@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Link } from "react-router-dom";
-import ButtonPlus from "../components/ButtonPlus";
-import listSrc from "../assets/list.svg";
-import settingsSrc from "../assets/settings.svg";
 import { createTask } from "../api/todos";
 // import styled from "@emotion/styled";
 import StyledHeader from "../components/StyledHeader";
+import StyledFooter from "../components/StyledFooter";
 
 function AddTask() {
   const [title, setTitle] = useState("");
@@ -95,17 +92,7 @@ function AddTask() {
           {error && <p>Something bad happened. Try again later!</p>}
         </form>
       </main>
-      <footer className="app__footer">
-        <Link to="/home">
-          <img src={listSrc} alt="home" />
-        </Link>
-        <Link to="/add">
-          <ButtonPlus />
-        </Link>
-        <Link to="/settings">
-          <img src={settingsSrc} alt="settings" />
-        </Link>
-      </footer>
+      <StyledFooter />
     </>
   );
 }

@@ -6,13 +6,10 @@ import ListItemIcon from "../components/ListItemIcon";
 import ListItemText from "../components/ListItemText";
 import ListItemCheckbox from "../components/ListItemCheckbox";
 import { getTodos } from "../api/todos";
-import { Link } from "react-router-dom";
-import ButtonPlus from "../components/ButtonPlus";
-import listSrc from "../assets/list.svg";
-import settingsSrc from "../assets/settings.svg";
 import useAsync from "../hooks/useAsync";
 // import styled from "@emotion/styled";
 import StyledHeader from "../components/StyledHeader";
+import StyledFooter from "../components/StyledFooter";
 
 function Home() {
   const { data: todos, loading, error } = useAsync(getTodos);
@@ -40,17 +37,7 @@ function Home() {
           ))}
         </List>
       </main>
-      <footer className="app__footer">
-        <Link to="/home">
-          <img src={listSrc} alt="home" />
-        </Link>
-        <Link to="/add">
-          <ButtonPlus />
-        </Link>
-        <Link to="/settings">
-          <img src={settingsSrc} alt="settings" />
-        </Link>
-      </footer>
+      <StyledFooter />
     </>
   );
 }
