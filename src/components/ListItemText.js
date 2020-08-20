@@ -1,5 +1,4 @@
 import React from "react";
-import "./ListItemText.css";
 import styled from "@emotion/styled";
 
 const Title = styled.h3`
