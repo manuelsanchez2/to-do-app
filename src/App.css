@@ -1,12 +1,3 @@
-.app__main {
-  background-color: ghostwhite;
-  border-style: solid;
-  border-image-slice: 1;
-  border-width: 5px 0;
-  border-image-source: var(--highlight-Color);
-  overflow: auto;
-}
-
 .app__form {
   display: flex;
   flex-direction: column;

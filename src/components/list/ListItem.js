@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
+import ListItemIcon from "./ListItemIcon";
+import ListItemText from "./ListItemText";
+import ListItemCheckbox from "./ListItemCheckbox";
 
 const ListContainer = styled.a`
   display: flex;
@@ -21,8 +24,14 @@ const ListContainer = styled.a`
   }
 `;
 
-function ListItem({ children }) {
-  return <ListContainer href="#hola">{children}</ListContainer>;
+function ListItem({ todo }) {
+  return (
+    <ListContainer href="#hola">
+      <ListItemIcon />
+      <ListItemText title={todo.title} author={todo.author} date={todo.date} />
+      <ListItemCheckbox />
+    </ListContainer>
+  );
 }
 
 export default ListItem;

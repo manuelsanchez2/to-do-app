@@ -1,10 +1,7 @@
 import React from "react";
 import "../App.css";
-import List from "../components/List";
-import ListItem from "../components/ListItem";
-import ListItemIcon from "../components/ListItemIcon";
-import ListItemText from "../components/ListItemText";
-import ListItemCheckbox from "../components/ListItemCheckbox";
+import List from "../components/list/List";
+import ListItem from "../components/list/ListItem";
 import { getTodos } from "../api/todos";
 import useAsync from "../hooks/useAsync";
 // import styled from "@emotion/styled";
@@ -27,15 +24,7 @@ function Home() {
         {loading && <div>Page is loading...</div>}
         <List>
           {todos?.map((todo) => (
-            <ListItem key={todo.id}>
-              <ListItemIcon />
-              <ListItemText
-                title={todo.title}
-                author={todo.author}
-                date={todo.date}
-              />
-              <ListItemCheckbox />
-            </ListItem>
+            <ListItem todo={todo} key={todo.id} />
           ))}
         </List>
       </StyledMainHome>
