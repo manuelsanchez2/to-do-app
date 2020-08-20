@@ -5,6 +5,8 @@ import ButtonPlus from "../components/ButtonPlus";
 import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
 import { createTask } from "../api/todos";
+// import styled from "@emotion/styled";
+import StyledHeader from "../components/StyledHeader";
 
 function AddTask() {
   const [title, setTitle] = useState("");
@@ -51,9 +53,9 @@ function AddTask() {
 
   return (
     <>
-      <header className="app__header">
+      <StyledHeader>
         <h2>ADD NEW TASK</h2>
-      </header>
+      </StyledHeader>
       <main className="app__main">
         <form className="app__form" onSubmit={handleSubmit}>
           <label className="app__form__input">

@@ -6,15 +6,17 @@ import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
 import { useHistory } from "react-router-dom";
 import backSrc from "../assets/back.svg";
+import StyledHeader from "../components/StyledHeader";
+// import styled from "@emotion/styled";
 
 function Settings(props) {
   const history = useHistory();
 
   return (
     <>
-      <header className="app__header">
+      <StyledHeader>
         <h2>SETTINGS</h2>
-      </header>
+      </StyledHeader>
       <main className="app__main">
         <button className="app__back_button" onClick={() => history.goBack()}>
           <img src={backSrc} alt="back" />

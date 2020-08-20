@@ -11,15 +11,17 @@ import ButtonPlus from "../components/ButtonPlus";
 import listSrc from "../assets/list.svg";
 import settingsSrc from "../assets/settings.svg";
 import useAsync from "../hooks/useAsync";
+// import styled from "@emotion/styled";
+import StyledHeader from "../components/StyledHeader";
 
 function Home() {
   const { data: todos, loading, error } = useAsync(getTodos);
 
   return (
     <>
-      <header className="app__header">
+      <StyledHeader>
         <h2>TO DO LIST</h2>
-      </header>
+      </StyledHeader>
       <main className="app__main">
         <button>REFRESH ME</button>
         {error && <div>FATAL ERROR...</div>}
