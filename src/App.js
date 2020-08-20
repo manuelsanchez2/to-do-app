@@ -13,22 +13,20 @@ import Settings from "./pages/Settings";
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/add">
-            <AddTask />
-          </Route>
-          <Route path="/settings">
-            <Settings />
-          </Route>
-          <Route path="/">
-            <Redirect to="home" />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/add">
+          <AddTask />
+        </Route>
+        <Route path="/settings">
+          <Settings />
+        </Route>
+        <Route path="/">
+          <Redirect to="home" />
+        </Route>
+      </Switch>
     </Router>
   );
 }

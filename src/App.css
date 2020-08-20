@@ -1,3 +1,23 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --highlight-Color: #4462ff;
+}
+
 .app__form {
   display: flex;
   flex-direction: column;
