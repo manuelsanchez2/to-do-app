@@ -1,21 +1,23 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-import ButtonPlus from "../components/ButtonPlus";
-import listSrc from "../assets/list.svg";
-import settingsSrc from "../assets/settings.svg";
 import { useHistory } from "react-router-dom";
 import backSrc from "../assets/back.svg";
+import StyledHeader from "../components/StyledHeader";
+import StyledFooter from "../components/StyledFooter";
+import PageContainer from "../components/PageContainer";
+import StyledMain from "../components/StyledMain";
+// import styled from "@emotion/styled";
 
 function Settings(props) {
   const history = useHistory();
 
   return (
-    <>
-      <header className="app__header">
+    <PageContainer>
+      <StyledHeader>
         <h2>SETTINGS</h2>
-      </header>
-      <main className="app__main">
+      </StyledHeader>
+      <StyledMain>
         <button className="app__back_button" onClick={() => history.goBack()}>
           <img src={backSrc} alt="back" />
         </button>
@@ -27,19 +29,9 @@ function Settings(props) {
           <li>OPCION 5</li>
         </ul>
         <Link to="/add">ADD NEW TASK</Link>
-      </main>
-      <footer className="app__footer">
-        <Link to="/home">
-          <img src={listSrc} alt="home" />
-        </Link>
-        <Link to="/add">
-          <ButtonPlus />
-        </Link>
-        <Link to="/settings">
-          <img src={settingsSrc} alt="settings" />
-        </Link>
-      </footer>
-    </>
+      </StyledMain>
+      <StyledFooter />
+    </PageContainer>
   );
 }
 

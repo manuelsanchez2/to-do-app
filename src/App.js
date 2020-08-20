@@ -9,11 +9,13 @@ import {
   Redirect,
 } from "react-router-dom";
 import Settings from "./pages/Settings";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
+    <>
+      <GlobalStyles />
+      <Router>
         <Switch>
           <Route path="/home">
             <Home />
@@ -28,8 +30,8 @@ function App() {
             <Redirect to="home" />
           </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
 

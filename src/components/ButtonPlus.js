@@ -1,16 +1,17 @@
 import React from "react";
 import plusSrc from "../assets/plus.svg";
-import "./ButtonPlus.css";
+import styled from "@emotion/styled";
+
+const ButtonImage = styled.button`
+  background: none;
+  border: none;
+`;
 
 function ButtonPlus() {
   return (
-    <button className="button">
-      <img
-        className="button__image"
-        src={plusSrc}
-        alt="button that creates tasks"
-      />
-    </button>
+    <ButtonImage>
+      <img src={plusSrc} alt="button that creates tasks" />
+    </ButtonImage>
   );
 }
 
