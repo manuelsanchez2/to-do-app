@@ -9,25 +9,29 @@ import {
   Redirect,
 } from "react-router-dom";
 import Settings from "./pages/Settings";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/add">
-          <AddTask />
-        </Route>
-        <Route path="/settings">
-          <Settings />
-        </Route>
-        <Route path="/">
-          <Redirect to="home" />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/add">
+            <AddTask />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+          <Route path="/">
+            <Redirect to="home" />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
