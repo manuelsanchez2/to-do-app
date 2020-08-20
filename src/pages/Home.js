@@ -7,7 +7,7 @@ import useAsync from "../hooks/useAsync";
 // import styled from "@emotion/styled";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
-import StyledMainHome from "../components/StyledMainHome";
+import StyledMain from "../components/StyledMain";
 import PageContainer from "../components/PageContainer";
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
       <StyledHeader>
         <h2>TO DO LIST</h2>
       </StyledHeader>
-      <StyledMainHome>
+      <StyledMain>
         <button>REFRESH ME</button>
         {error && <div>FATAL ERROR...</div>}
         {loading && <div>Page is loading...</div>}
@@ -27,7 +27,7 @@ function Home() {
             <ListItem todo={todo} key={todo.id} />
           ))}
         </List>
-      </StyledMainHome>
+      </StyledMain>
       <StyledFooter />
     </PageContainer>
   );

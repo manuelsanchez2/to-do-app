@@ -6,7 +6,7 @@ import backSrc from "../assets/back.svg";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
 import PageContainer from "../components/PageContainer";
-import StyledMainSettings from "../components/StyledMainSettings";
+import StyledMain from "../components/StyledMain";
 // import styled from "@emotion/styled";
 
 function Settings(props) {
@@ -17,7 +17,7 @@ function Settings(props) {
       <StyledHeader>
         <h2>SETTINGS</h2>
       </StyledHeader>
-      <StyledMainSettings>
+      <StyledMain>
         <button className="app__back_button" onClick={() => history.goBack()}>
           <img src={backSrc} alt="back" />
         </button>
@@ -29,7 +29,7 @@ function Settings(props) {
           <li>OPCION 5</li>
         </ul>
         <Link to="/add">ADD NEW TASK</Link>
-      </StyledMainSettings>
+      </StyledMain>
       <StyledFooter />
     </PageContainer>
   );

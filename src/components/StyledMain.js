@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
 
-const MainAddTask = styled.main`
+const StyledMain = styled.main`
   background-color: ghostwhite;
   border-style: solid;
   border-image-slice: 1;
@@ -9,8 +8,5 @@ const MainAddTask = styled.main`
   border-image-source: var(--highlight-Color);
   overflow: auto;
 `;
-function StyledMainAddTask({ children }) {
-  return <MainAddTask>{children}</MainAddTask>;
-}
 
-export default StyledMainAddTask;
+export default StyledMain;
