@@ -4,6 +4,7 @@ import { createTask } from "../api/todos";
 // import styled from "@emotion/styled";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
+import PageContainer from "../components/PageContainer";
 
 function AddTask() {
   const [title, setTitle] = useState("");
@@ -49,7 +50,7 @@ function AddTask() {
   console.log(title, author, date);
 
   return (
-    <>
+    <PageContainer>
       <StyledHeader>
         <h2>ADD NEW TASK</h2>
       </StyledHeader>
@@ -93,7 +94,7 @@ function AddTask() {
         </form>
       </main>
       <StyledFooter />
-    </>
+    </PageContainer>
   );
 }
 

@@ -10,16 +10,18 @@ import useAsync from "../hooks/useAsync";
 // import styled from "@emotion/styled";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
+import StyledMainHome from "../components/StyledMainHome";
+import PageContainer from "../components/PageContainer";
 
 function Home() {
   const { data: todos, loading, error } = useAsync(getTodos);
 
   return (
-    <>
+    <PageContainer>
       <StyledHeader>
         <h2>TO DO LIST</h2>
       </StyledHeader>
-      <main className="app__main">
+      <StyledMainHome>
         <button>REFRESH ME</button>
         {error && <div>FATAL ERROR...</div>}
         {loading && <div>Page is loading...</div>}
@@ -36,9 +38,9 @@ function Home() {
             </ListItem>
           ))}
         </List>
-      </main>
+      </StyledMainHome>
       <StyledFooter />
-    </>
+    </PageContainer>
   );
 }
 

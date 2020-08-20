@@ -5,13 +5,14 @@ import { useHistory } from "react-router-dom";
 import backSrc from "../assets/back.svg";
 import StyledHeader from "../components/StyledHeader";
 import StyledFooter from "../components/StyledFooter";
+import PageContainer from "../components/PageContainer";
 // import styled from "@emotion/styled";
 
 function Settings(props) {
   const history = useHistory();
 
   return (
-    <>
+    <PageContainer>
       <StyledHeader>
         <h2>SETTINGS</h2>
       </StyledHeader>
@@ -29,7 +30,7 @@ function Settings(props) {
         <Link to="/add">ADD NEW TASK</Link>
       </main>
       <StyledFooter />
-    </>
+    </PageContainer>
   );
 }
 
