@@ -8,6 +8,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <AddTask />
           </Route>
           <Route path="/settings">
-            <h2>Hola, soy Settings</h2>
+            <Settings />
           </Route>
           <Route path="/">
             <Redirect to="home" />
