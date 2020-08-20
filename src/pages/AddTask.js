@@ -90,10 +90,8 @@ function AddTask() {
             value="Add task"
             disabled={!title || !author || loading}
           />
-          {error && <p>Something bad happened. Try again later :)</p>}
+          {error && <p>Something bad happened. Try again later!</p>}
         </form>
-
-        <Link to="/home">BACK TO HOME</Link>
       </main>
       <footer className="app__footer">
         <Link to="/home">

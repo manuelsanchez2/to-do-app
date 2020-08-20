@@ -17,12 +17,12 @@ function Home() {
 
   return (
     <>
-      {error && <div>FATAL ERROR...</div>}
-      {loading && <div>Page is loading...</div>}
       <header className="app__header">
         <h2>TO DO LIST</h2>
       </header>
       <main className="app__main">
+        {error && <div>FATAL ERROR...</div>}
+        {loading && <div>Page is loading...</div>}
         <List>
           {todos?.map((todo) => (
             <ListItem key={todo.id}>
@@ -36,7 +36,6 @@ function Home() {
             </ListItem>
           ))}
         </List>
-        <Link to="/add">ADD NEW TASK</Link>
       </main>
       <footer className="app__footer">
         <Link to="/home">
